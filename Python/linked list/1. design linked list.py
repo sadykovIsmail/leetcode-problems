@@ -42,10 +42,27 @@ class MyLinkedList:
         while current.next:
             current = current.next
         current.next = new_node
-    # def addAtIndex(self, index: int, val: int) -> None:
         
+def addAtIndex(self, index: int, val: int) -> None:
+    if index <= 0:
+        self.addAtHead(val)
+        return
 
-    # def deleteAtIndex(self, index: int) -> None:
+    i = 0
+    current = self.head
+
+    while current and i < index - 1:
+        current = current.next
+        i += 1
+
+    if not current:
+        return  # index > length → do nothing
+
+    new_node = ListNode(val)
+    new_node.next = current.next
+    current.next = new_node
+
+    def deleteAtIndex(self, index: int) -> None:
         
 
 
@@ -66,6 +83,9 @@ ll.head = node1
 node1.next = node2
 node2.next = node3
 
-ll.addAtTail(5)  # adding 5 at tail
+# adding 5 at tail
+print(ll.get(0))
 print(ll.get(2))  # should print 30
 print(ll.get(3))  # should print 5
+ll.addAtIndex(3, 8)
+print(ll.get(3))
