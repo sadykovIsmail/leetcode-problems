@@ -13,7 +13,7 @@ const detectCycle = function(head) {
             let point1 = slow
             let point2 = head
             while(point1 !== point2){
-              point1 =  point1.next
+                point1 =  point1.next
                 point2 = point2.next
             }
             return point1
