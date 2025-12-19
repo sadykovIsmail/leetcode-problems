@@ -31,4 +31,7 @@ Test pseudocode manually with small examples
 
 Function → Loops → Conditions → Return → Test
 */
+
+
+2) test --> test to edge cases --> submit
     """
