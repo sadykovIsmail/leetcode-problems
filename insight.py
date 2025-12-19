@@ -17,6 +17,7 @@ Identify loops, conditions, and data structures
 
 
 3. Write Pseudocode
+check for emptines
 
 Use structured “fake code”
 
