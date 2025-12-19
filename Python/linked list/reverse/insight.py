@@ -1,1 +1,0 @@
-# iterate the nodes in original order and move them to the head of the list one by one

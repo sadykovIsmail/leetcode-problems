@@ -31,6 +31,7 @@ slow = slow.next
 
 11)Visualize small examples to catch mistakes.
 
+12)# iterate the nodes in original order and move them to the head of the list one by one
 
 */
     """
