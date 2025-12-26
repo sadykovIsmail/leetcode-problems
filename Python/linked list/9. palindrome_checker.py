@@ -45,3 +45,43 @@ head = node1
 
 example = Solution()
 print(example.isPalindrome(head))
+
+
+
+# How should be
+from typing import Optional
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+class Solution:
+    def isPalindrome(self, head: Optional[ListNode]) -> bool:
+        if not head or not head.next:
+            return True
+
+        # 1️⃣ Find middle (slow ends at mid)
+        slow = fast = head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        # 2️⃣ Reverse second half
+        prev = None
+        while slow:
+            nxt = slow.next
+            slow.next = prev
+            prev = slow
+            slow = nxt
+
+        # 3️⃣ Compare both halves
+        left = head
+        right = prev
+        while right:
+            if left.val != right.val:
+                return False
+            left = left.next
+            right = right.next
+
+        return True
