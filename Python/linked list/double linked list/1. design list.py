@@ -6,8 +6,8 @@ class ListNode:
 
 class MyLinkedList:
 
-    def __init__(self):
-        self.head = None
+    def __init__(self, head):
+        self.head = head
         
 
     def get(self, index: int) -> int:
@@ -21,6 +21,8 @@ class MyLinkedList:
             if not current:
                 return None
             current = current.next
+            i += 1
+        current.next = None
         return current
 
     # def addAtHead(self, val: int) -> None:
@@ -34,6 +36,13 @@ class MyLinkedList:
 
     # def deleteAtIndex(self, index: int) -> None:
         
+        
+    def print_linked_list(self, head):
+        result = []
+        while head:
+            result.append(head.val)
+            head = head.next
+        return result
 
 node1 = ListNode(1)
 node2 = ListNode(2)
@@ -44,9 +53,12 @@ node1.next = node2
 node2.next = node3
 node3.next = node4
 
+head = node1
 
-obj = MyLinkedList()
-param_1 = obj.get(index)
+
+example = MyLinkedList(head)
+param_1 = example.get(2)
+print(example.print_linked_list(param_1))
 # obj.addAtHead(val)
 # obj.addAtTail(val)
 # obj.addAtIndex(index,val)

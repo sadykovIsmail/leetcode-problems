@@ -32,7 +32,7 @@ class Solution:
         return head
 
     
-    def print_linked_list(head):
+    def print_linked_list(self, head):
         result = []
         while head:
             result.append(head.val)
@@ -54,4 +54,4 @@ head = node1
 
 example = Solution()
 new_head = example.oddEvenList(head)
-print(new_head)
+print(example.print_linked_list(new_head))
