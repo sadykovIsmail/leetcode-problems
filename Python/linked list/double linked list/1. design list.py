@@ -25,8 +25,18 @@ class MyLinkedList:
         current.next = None
         return current
 
-    # def addAtHead(self, val: int) -> None:
+    def addAtHead(self, val: int) -> None:
         
+        value = ListNode(val)
+        
+        if not self.head:
+            self.head = value
+            
+        head = self.head
+        
+        value.next = head
+        head.prev = value
+        return value
 
     # def addAtTail(self, val: int) -> None:
         
@@ -52,6 +62,11 @@ node4 = ListNode(4)
 node1.next = node2
 node2.next = node3
 node3.next = node4
+
+node4.prev = node3
+node3.prev = node2
+node2.prev = node1
+node1.prev = None
 
 head = node1
 
