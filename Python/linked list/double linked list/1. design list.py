@@ -1,6 +1,7 @@
 class Listnode:
-    def __init__(self, val, next=None):
+    def __init__(self, val, prev=None, next=None):
         self.val = val
+        self.prev = prev
         self.next = next
 
 class MyLinkedList:
@@ -10,7 +11,17 @@ class MyLinkedList:
         
 
     def get(self, index: int) -> int:
-        
+        if not self.head:
+            return None
+        if index < 1:
+            return self.head
+        i = 0
+        current = self.head
+        while i < index:
+            if not current:
+                return None
+            current = current.next
+        return current
 
     def addAtHead(self, val: int) -> None:
         
