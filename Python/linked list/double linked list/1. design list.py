@@ -1,4 +1,4 @@
-class Listnode:
+class ListNode:
     def __init__(self, val, prev=None, next=None):
         self.val = val
         self.prev = prev
@@ -35,10 +35,13 @@ class MyLinkedList:
     # def deleteAtIndex(self, index: int) -> None:
         
 
+node1 = ListNode(1)
+node2 = ListNode(2)
+node3 = ListNode(3)
+node4 = ListNode(4)
 
-# Your MyLinkedList object will be instantiated and called as such:
-# obj = MyLinkedList()
-# param_1 = obj.get(index)
+obj = MyLinkedList()
+param_1 = obj.get(index)
 # obj.addAtHead(val)
 # obj.addAtTail(val)
 # obj.addAtIndex(index,val)
