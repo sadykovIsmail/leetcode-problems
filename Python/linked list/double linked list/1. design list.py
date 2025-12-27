@@ -23,16 +23,16 @@ class MyLinkedList:
             current = current.next
         return current
 
-    def addAtHead(self, val: int) -> None:
+    # def addAtHead(self, val: int) -> None:
         
 
-    def addAtTail(self, val: int) -> None:
+    # def addAtTail(self, val: int) -> None:
         
 
-    def addAtIndex(self, index: int, val: int) -> None:
+    # def addAtIndex(self, index: int, val: int) -> None:
         
 
-    def deleteAtIndex(self, index: int) -> None:
+    # def deleteAtIndex(self, index: int) -> None:
         
 
 
