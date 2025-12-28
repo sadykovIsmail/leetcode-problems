@@ -54,14 +54,14 @@ class MyLinkedList:
         cur = self.head
         if not self.head:
             self.head = value
-            return self.head
+            return
         
         while cur.next:
             cur = cur.next
         value.next = None
         value.prev = cur
         cur.next = value
-        return self.head
+        return 
 
     # def addAtIndex(self, index: int, val: int) -> None:
         
