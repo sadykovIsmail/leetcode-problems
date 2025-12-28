@@ -86,8 +86,24 @@ class MyLinkedList:
         
             
 
-    # def deleteAtIndex(self, index: int) -> None:
-        
+    def deleteAtIndex(self, index: int) -> None:
+        head = self.head
+        if index <= 0:
+            head.next.prev = None
+            self.head = head.next
+            return self.head
+        i = 0
+        while i < index:
+            if not head.next:
+                head.prev.next = None
+                return self.head
+            
+            head = head.next
+            i += 0
+        head.prev.next = head.next
+        head.next.prev = head.prev
+        return self.head
+            
         
     def print_linked_list(self, head):
         result = []
@@ -104,11 +120,13 @@ param_1 = example.addAtHead(1)
 param_5 = example.addAtTail(5)
 param_3 = example.addAtIndex(2, 3)
 
+delete = example.deleteAtIndex(2)
+
 
 
 # get = example.get(1)
 # print(get)
-print(example.print_linked_list(param_3))
+print(example.print_linked_list(delete))
 # obj.addAtHead(val)
 # obj.addAtTail(val)
 # obj.addAtIndex(index,val)
