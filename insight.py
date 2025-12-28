@@ -1,4 +1,20 @@
 """
+ROADMAP:
+    1)Arrays 101 / Fun with Arrays
+    2)Linked List
+    3)Array & String (Advanced / common string problems)
+    4)Recursion I (basics)
+    5)Hash Table
+    6)Queue & Stack
+    7)Heap / Priority Queue
+    8)Binary Search
+    9)Recursion II / Backtracking (advanced)
+    10)Binary Tre
+    11)Tri
+    12)N-ary Tree
+    13)Binary Search Tree (BST)
+    14)Dynamic Programming
+    15)Graph
     /* 
 Quick Steps
 
@@ -35,4 +51,7 @@ Function → Loops → Conditions → Return → Test
 
 
 2) test --> test to edge cases --> submit
+
+
+
     """
