@@ -63,8 +63,27 @@ class MyLinkedList:
         cur.next = value
         return 
 
-    # def addAtIndex(self, index: int, val: int) -> None:
+    def addAtIndex(self, index: int, val: int) -> None:
+        value = ListNode(val)
+        head = self.head
+        if index <= 0:
+            self.addAtHead(val)
+            return self.head
+        i = 0
         
+        while i < index:
+            if not head.next:
+                self.addAtTail(val)
+                return self.head
+            head = head.next
+        value.next = head
+        value.prev = head.prev
+        head.prev.next = value
+        head.prev = value
+        return self.head
+            
+        
+            
 
     # def deleteAtIndex(self, index: int) -> None:
         
@@ -94,15 +113,15 @@ class MyLinkedList:
 
 
 example = MyLinkedList()
-# param_1 = example.addAtHead(3)
-# param_2 = example.addAtHead(2)
-# param_3 = example.addAtHead(1)
+param_1 = example.addAtHead(3)
+param_2 = example.addAtHead(2)
+param_3 = example.addAtHead(1)
 param_4 = example.addAtTail(4)
 
 
-# get = example.get(1)
-# print(example.print_linked_list(param_3))
-# print(get)
+get = example.get(1)
+print(example.print_linked_list(param_3))
+print(get)
 print(example.print_linked_list(param_4))
 # obj.addAtHead(val)
 # obj.addAtTail(val)
