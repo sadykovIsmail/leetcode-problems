@@ -68,19 +68,20 @@ class MyLinkedList:
         head = self.head
         if index <= 0:
             self.addAtHead(val)
-            return self.head
+            return
         i = 0
         
         while i < index:
             if not head.next:
                 self.addAtTail(val)
-                return self.head
+                return
             head = head.next
+            i += 1
         value.next = head
         value.prev = head.prev
         head.prev.next = value
         head.prev = value
-        return self.head
+        return
             
         
             
@@ -94,35 +95,20 @@ class MyLinkedList:
             result.append(head.val)
             head = head.next
         return result
-# Example
-# node1 = ListNode(1)
-# node2 = ListNode(2)
-# node3 = ListNode(3)
-# node4 = ListNode(4)
-
-# node1.next = node2
-# node2.next = node3
-# node3.next = node4
-
-# node4.prev = node3
-# node3.prev = node2
-# node2.prev = node1
-# node1.prev = None
-
-# head = node1
 
 
 example = MyLinkedList()
-param_1 = example.addAtHead(3)
+param_4 = example.addAtHead(4)
 param_2 = example.addAtHead(2)
-param_3 = example.addAtHead(1)
-param_4 = example.addAtTail(4)
+param_1 = example.addAtHead(1)
+param_5 = example.addAtTail(5)
+param_3 = example.addAtIndex(2, 3)
 
 
-get = example.get(1)
+
+# get = example.get(1)
+# print(get)
 print(example.print_linked_list(param_3))
-print(get)
-print(example.print_linked_list(param_4))
 # obj.addAtHead(val)
 # obj.addAtTail(val)
 # obj.addAtIndex(index,val)
