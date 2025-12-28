@@ -6,24 +6,32 @@ class ListNode:
 
 class MyLinkedList:
 
-    def __init__(self, head):
-        self.head = head
+    def __init__(self):
+        self.head = None
         
 
     def get(self, index: int) -> int:
         if not self.head:
             return None
-        if index < 1:
-            return self.head
-        i = 0
         current = self.head
+
+        if index < 1:
+            # current.next = None
+            return current.val
+        i = 0
+        
         while i < index:
             if not current:
                 return None
             current = current.next
             i += 1
-        current.next = None
-        return current
+            
+            
+        
+        
+            
+        return current.val
+        
 
     def addAtHead(self, val: int) -> None:
         
@@ -31,12 +39,14 @@ class MyLinkedList:
         
         if not self.head:
             self.head = value
+            return self.head
             
         head = self.head
         
         value.next = head
         head.prev = value
-        return value
+        self.head = value
+        return self.head
 
     # def addAtTail(self, val: int) -> None:
         
@@ -53,27 +63,32 @@ class MyLinkedList:
             result.append(head.val)
             head = head.next
         return result
+# Example
+# node1 = ListNode(1)
+# node2 = ListNode(2)
+# node3 = ListNode(3)
+# node4 = ListNode(4)
 
-node1 = ListNode(1)
-node2 = ListNode(2)
-node3 = ListNode(3)
-node4 = ListNode(4)
+# node1.next = node2
+# node2.next = node3
+# node3.next = node4
 
-node1.next = node2
-node2.next = node3
-node3.next = node4
+# node4.prev = node3
+# node3.prev = node2
+# node2.prev = node1
+# node1.prev = None
 
-node4.prev = node3
-node3.prev = node2
-node2.prev = node1
-node1.prev = None
-
-head = node1
+# head = node1
 
 
-example = MyLinkedList(head)
-param_1 = example.get(2)
-print(example.print_linked_list(param_1))
+example = MyLinkedList()
+param_1 = example.addAtHead(1)
+param_2 = example.addAtHead(2)
+param_3 = example.addAtHead(3)
+
+get = example.get(1)
+print(example.print_linked_list(param_3))
+print(get)
 # obj.addAtHead(val)
 # obj.addAtTail(val)
 # obj.addAtIndex(index,val)
