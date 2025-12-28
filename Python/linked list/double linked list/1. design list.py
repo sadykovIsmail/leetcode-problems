@@ -39,17 +39,29 @@ class MyLinkedList:
         
         if not self.head:
             self.head = value
-            return self.head
+            return
             
         head = self.head
         
         value.next = head
         head.prev = value
         self.head = value
-        return self.head
+        return
 
-    # def addAtTail(self, val: int) -> None:
+    def addAtTail(self, val: int) -> None:
+        value = ListNode(val)
         
+        cur = self.head
+        if not self.head:
+            self.head = value
+            return self.head
+        
+        while cur.next:
+            cur = cur.next
+        value.next = None
+        value.prev = cur
+        cur.next = value
+        return self.head
 
     # def addAtIndex(self, index: int, val: int) -> None:
         
@@ -82,13 +94,16 @@ class MyLinkedList:
 
 
 example = MyLinkedList()
-param_1 = example.addAtHead(1)
-param_2 = example.addAtHead(2)
-param_3 = example.addAtHead(3)
+# param_1 = example.addAtHead(3)
+# param_2 = example.addAtHead(2)
+# param_3 = example.addAtHead(1)
+param_4 = example.addAtTail(4)
 
-get = example.get(1)
-print(example.print_linked_list(param_3))
-print(get)
+
+# get = example.get(1)
+# print(example.print_linked_list(param_3))
+# print(get)
+print(example.print_linked_list(param_4))
 # obj.addAtHead(val)
 # obj.addAtTail(val)
 # obj.addAtIndex(index,val)
