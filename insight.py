@@ -1,20 +1,23 @@
 """
 ROADMAP:
-    1)Arrays 101 / Fun with Arrays
-    2)Linked List
-    3)Array & String (Advanced / common string problems)
-    4)Recursion I (basics)
-    5)Hash Table
-    6)Queue & Stack
-    7)Heap / Priority Queue
-    8)Binary Search
-    9)Recursion II / Backtracking (advanced)
-    10)Binary Tre
-    11)Tri
-    12)N-ary Tree
-    13)Binary Search Tree (BST)
-    14)Dynamic Programming
-    15)Graph
+    
+1. arrays_101
+2. linked_list
+3. array_and_string
+4. hash_table
+5. queue_and_stack
+6. heap
+7. binary_search
+8. recursion_1
+9. binary_tree
+10. recursion_2
+11. trie
+12. n_ary_tree
+13. binary_search_tree
+14. dynamic_programming
+15. graph
+
+
     /* 
 Quick Steps
 
