@@ -7,7 +7,7 @@ ROADMAP:
 4. hash_table
 5. queue_and_stack
 6. heap
-7. binary_search
+7. binary_search #Daily leetcode start
 8. recursion_1
 9. binary_tree
 10. recursion_2
