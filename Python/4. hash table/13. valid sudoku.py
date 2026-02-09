@@ -94,6 +94,7 @@ print(exa.isValidSudoku(test))
 
 
 """What is actually needed
+
 class Solution:
     def isValidSudoku(self, board):
         rows = [set() for _ in range(9)]
@@ -117,4 +118,38 @@ class Solution:
 
         return True
 
+"""
+
+"""The fastest version
+
+class Solution:
+    def isValidSudoku(self, board: List[List[str]]) -> bool:
+        # Use integers as bitmasks to track seen numbers
+        rows = [0] * 9
+        cols = [0] * 9
+        boxes = [0] * 9
+
+        for r in range(9):
+            for c in range(9):
+                val = board[r][c]
+                if val == '.':
+                    continue
+
+                # Convert char to number and create bitmask
+                num = int(val) - 1  # 0-8 instead of 1-9
+                bit = 1 << num
+
+                # Calculate box index
+                box_idx = (r // 3) * 3 + (c // 3)
+
+                # Check if number already exists using bitwise AND
+                if rows[r] & bit or cols[c] & bit or boxes[box_idx] & bit:
+                    return False
+
+                # Mark number as seen using bitwise OR
+                rows[r] |= bit
+                cols[c] |= bit
+                boxes[box_idx] |= bit
+
+        return True
 """
